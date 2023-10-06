@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alibourb <alibourb@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/06 13:53:07 by alibourb          #+#    #+#             */
+/*   Updated: 2023/10/06 16:34:55 by alibourb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include <iostream>
 
 /* LE BUT EST DE TRADUIRE CE CODE EN C++ :
@@ -6,7 +18,7 @@ int main(int ac, char **ag)
     int i = 1;
     int j = 0;
     if (ac == 1)
-        printf("Pas de bruit");
+        printf("Blablabla");
     else
     {
         while (i < ac)
@@ -28,9 +40,9 @@ int main(int ac, char **ag)
 
 int main(int ac, char **ag) {
     if (ac == 1)
-        std::cout << "* LOUD AND UNBEARABLE NOISE *" << std::endl;
+        return ((std::cout << "* LOUD AND UNBEARABLE FEEDBACKNOISE *" << std::endl), 0);
     else {
-        for (int i = 0; i < ac; i++) {
+        for (int i = 1; i < ac; i++) {
             for (int j = 0; ag[i][j] != '\0'; j++) {
                 std::cout << (char)toupper((unsigned char)ag[i][j]);
             }
@@ -40,5 +52,3 @@ int main(int ac, char **ag) {
     }
     std::cout << std::endl;
     return 0; }
-
-/* PENSER A REMETTRE UN MAKEFILE + dossier du rendu est ex00 */

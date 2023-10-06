@@ -1,10 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alibourb <alibourb@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/06 15:01:56 by alibourb          #+#    #+#             */
+/*   Updated: 2023/10/06 16:55:45 by alibourb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 
-/*************************************************************/
-/*                          ADD                              */
-/*************************************************************/
+/*
+Toujours preciser avant d'utiliser une fonction (getter ou setter), ou une
+instance, a quelle classe elles appartiennent.
+Utilisation du mot-clef "this->", de type pointeur, et qui permet d'acceder
+a l'objet actuel.
 
-/* simplifier les blocs en modifiant les fonctions de Contact ? */
+Fonction get() : lit un seul char a partir de stdin.
+
+Fonction getline() : lit et stocke la string passee en stdin, \n inclut, lu
+mais pas stocke. Elle prend la ligne jusqu'au \n, et le remplace par \0.
+
+Ces deux fonctions sont de la bibli istream.
+*/
+
+/******************************************************************************/
+/*                                   ADD                                      */
+/******************************************************************************/
+
 void    PhoneBook::_add(void) {
     Contact newContact;
     std::string data;
@@ -15,7 +40,7 @@ void    PhoneBook::_add(void) {
     std::cout << "First Name : ";
     std::getline(std::cin, data);
     newContact.set_firstName(data);
-    
+
     std::cout << "Last Name : ";
     std::getline(std::cin, data);
     newContact.set_lastName(data);
@@ -36,9 +61,9 @@ void    PhoneBook::_add(void) {
     this->nbrContacts++;
 }
 
-/*************************************************************/
-/*                        SEARCH                             */
-/*************************************************************/
+/******************************************************************************/
+/*                                  SEARCH                                    */
+/******************************************************************************/
 
 void    PhoneBook::_search(void) {
     std::string research_input;
@@ -51,7 +76,7 @@ void    PhoneBook::_search(void) {
     this->display_allContacts();
     while (true) {
         std::getline(std::cin, research_input);
-        ID_research = std::stoi(research_input);
+        ID_research = std::atoi(research_input.c_str()); // exemple de cast
         if (ID_research < 1 || ID_research > 8 || ID_research > this->nbrContacts) {
             std::cout << "Please enter valid ID" << std::endl;
             return ;
@@ -62,18 +87,18 @@ void    PhoneBook::_search(void) {
     _contacts[ID_research - 1].display_Contact(ID_research);
 }
 
-/*************************************************************/
-/*                          EXIT                             */
-/*************************************************************/
+/******************************************************************************/
+/*                                  EXIT                                      */
+/******************************************************************************/
 
 void    PhoneBook::_exit(void) {
     std::cout << "Bye bye !" << std::endl;
-    exit(0) ;
+    exit (SUCCESS);
 }
 
-/*************************************************************/
-/*                    DISPLAY UTILS                          */
-/*************************************************************/
+/******************************************************************************/
+/*                             DISPLAY UTILS                                  */
+/******************************************************************************/
 
 void    PhoneBook::display_upper_frame(void) {
     std::cout << "\033[1;91m╔════════════╦════════════╦════════════╦════════════╗"
@@ -89,9 +114,9 @@ void    PhoneBook::display_bottom_frame(void) {
         << std::endl;
 }
 
-void    PhoneBook::display_allContacts(void) { 
+void    PhoneBook::display_allContacts(void) {
     this->display_upper_frame();
-    for (int i = 0; i < PhoneBook::nbrContacts; i++) 
+    for (int i = 0; i < PhoneBook::nbrContacts; i++)
     {
         std::cout << this->_contacts[i].get_firstName();
         std::cout << std::endl;
