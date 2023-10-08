@@ -29,8 +29,9 @@ tions qui permettent de verifier les formats de ces infos.
 class Contact {
 
     public:
-    Contact() : _firstName(""), _lastName(""), _phoneNumber(""),
-        _darkestSecret("") {}
+    Contact() : _firstName(""), _lastName(""), _nickName(""),
+    _phoneNumber(""), _darkestSecret("") {}
+    int         ID;
     bool        set_firstName(std::string str);
     bool        set_lastName(std::string str);
     bool        set_nickName(std::string str);

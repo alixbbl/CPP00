@@ -1,0 +1,16 @@
+/*
+
+FAUT-IL REMETTRE UN .H pour l'exercice 1 ????
+
+Verifier ok sur une largeur decidee par moi pour afficher le ID? puis je afficher
+le ID de chaque contact ??
+
+Il faut pouvoir centrer les data dans chaque case du PhoneBook. 
+
+Declencher une sortie de ADD si une error sur l'une des entrees (bool).
+Creer une sous-fonction add_request ? & faire la cascade de booleens ?
+
+Erreur de stockage de data dans une entree mal repondue (09 dans Dark secret)
+
+Ne reconnait visiblement pas un ID valide, renvoie un Error message.
+*/

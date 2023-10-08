@@ -18,10 +18,7 @@
 /******************************************************************************/
 
 bool    Contact::set_firstName(std::string str) {
-    if (str.empty()) {
-        return false;
-    }
-    else if (!only_alpha(str)) {
+    if (!only_alpha(str)) {
         std::cout << "Error : You can only use letters and hyphens."
             << std::endl;
         return false;
@@ -32,10 +29,7 @@ bool    Contact::set_firstName(std::string str) {
 }
 
 bool    Contact::set_lastName(std::string str) {
-    if (str.empty()) {
-        return false;
-    }
-    else if (!only_alpha(str)) {
+    if (!only_alpha(str)) {
         std::cout << "Error : You can only use letters and hyphens."
             << std::endl;
         return false;
@@ -47,10 +41,7 @@ bool    Contact::set_lastName(std::string str) {
 }
 
 bool    Contact::set_nickName(std::string str) {
-    if (str.empty()) {
-        return false;
-    }
-    else if (!only_alpha(str)) {
+    if (!only_alpha(str)) {
         std::cout << "Error : You can only use letters and hyphens."
             << std::endl;
         return false;
@@ -61,10 +52,7 @@ bool    Contact::set_nickName(std::string str) {
 }
 
 bool    Contact::set_phoneNumber(std::string str) {
-    if (str.empty()) {
-        return false;
-    }
-    else if (!only_digits(str)) {
+    if (!only_digits(str)) {
         std::cout << "Error : You can only use plus sign and digits."
             << std::endl;
         return false;
@@ -73,10 +61,8 @@ bool    Contact::set_phoneNumber(std::string str) {
     return true;
 }
 
+// ne prend pas les \n en l'etat a cause de getline(), a considerer
 bool    Contact::set_darkestSecret(std::string str) {
-    if (str.empty()) {
-        return false;
-    }
     this->_darkestSecret = str;
     return true;
 }
@@ -130,17 +116,10 @@ bool    Contact::only_alpha(std::string str) {
 /******************************************************************************/
 
 void Contact::display_Contact(int _contactId) {
-    if (_contactId >= 1 && _contactId <= 8) { // Assurez-vous que l'ID est valide
-        // Utilisez l'ID pour accéder au contact correspondant dans le tableau
-        int index = _contactId - 1; // L'ID commence généralement à 1
-        std::cout << "Contact ID: " << _contactId << std::endl;
-        std::cout << "First Name: " << this->_firstName[index] << std::endl;
-        std::cout << "Last Name: " << this->_lastName[index] << std::endl;
-        std::cout << "Nickname: " << this->_nickName[index] << std::endl;
-        std::cout << "Phone Number: " << this->_phoneNumber[index] << std::endl;
-        std::cout << "Darkest Secret: " << this->_darkestSecret[index] << std::endl;
-        std::cout << std::endl;
-    } else {
-        std::cout << "Please enter a valid contact ID (1-8)." << std::endl;
-    }
+    std::cout << "Contact ID: " << _contactId << std::endl;
+    std::cout << "First Name: " << this->_firstName << std::endl;
+    std::cout << "Last Name: " << this->_lastName << std::endl;
+    std::cout << "Nickname: " << this->_nickName << std::endl;
+    std::cout << "Phone Number: " << this->_phoneNumber << std::endl;
+    std::cout << "Darkest Secret: " << this->_darkestSecret << std::endl;
 }
