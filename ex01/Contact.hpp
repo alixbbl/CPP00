@@ -6,7 +6,7 @@
 /*   By: alibourb <alibourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:44:44 by alibourb          #+#    #+#             */
-/*   Updated: 2023/10/06 16:11:54 by alibourb         ###   ########.fr       */
+/*   Updated: 2023/11/08 18:19:00 by alibourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,19 @@ class Contact {
     Contact() : _firstName(""), _lastName(""), _nickName(""),
     _phoneNumber(""), _darkestSecret("") {}
     int         ID;
-    bool        set_firstName(std::string str);
-    bool        set_lastName(std::string str);
-    bool        set_nickName(std::string str);
-    bool        set_phoneNumber(std::string str);
-    bool        set_darkestSecret(std::string str);
+    void        set_firstName();
+    void        set_lastName();
+    void        set_nickName();
+    void        set_phoneNumber();
+    void        set_darkestSecret();
     void        display_Contact(int _contactId);
     std::string get_firstName();
     std::string get_lastName();
     std::string get_nickName();
     std::string get_phoneNumber();
     std::string get_darkestSecret();
+
+    void        exit_contact();
 
     private:
     std::string _firstName;

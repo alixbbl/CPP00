@@ -6,7 +6,7 @@
 /*   By: alibourb <alibourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:15:51 by alibourb          #+#    #+#             */
-/*   Updated: 2023/10/06 16:44:49 by alibourb         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:39:25 by alibourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class PhoneBook {
         void    _add(void);
         void    _search(void);
         void    _exit(void);
+
     private:
         int     nbrContacts;
         Contact _contacts[8];

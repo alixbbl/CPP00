@@ -6,7 +6,7 @@
 /*   By: alibourb <alibourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:53:07 by alibourb          #+#    #+#             */
-/*   Updated: 2023/10/06 16:34:55 by alibourb         ###   ########.fr       */
+/*   Updated: 2023/11/05 12:19:00 by alibourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,7 @@ int main(int ac, char **ag) {
     else {
         for (int i = 1; i < ac; i++) {
             for (int j = 0; ag[i][j] != '\0'; j++) {
-                std::cout << (char)toupper((unsigned char)ag[i][j]);
-            }
-            if (i < ac - 1)
-                std::cout << " ";
+                std::cout << (char)toupper((unsigned char)ag[i][j]); }
         }
     }
     std::cout << std::endl;
